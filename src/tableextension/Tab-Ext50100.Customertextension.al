@@ -8,11 +8,24 @@ tableextension 50100 "Customer_textension" extends Customer
             CaptionML = ENU = 'Management Responsible', DAN = 'Ledelsansvarlig';
             DataClassification = ToBeClassified;
             TableRelation = Employee."No.";
-            /* trigger OnValidate()
+            trigger OnValidate()
             begin
-                "Global Dimension 1 Code" := '';
-                "Global Dimension 2 Code" := '';
-            end; */
+                if DimensionValue.Get('PARTNER', "Management Responsible") then begin
+                    if DefaultDimension.Get(18, "No.", 'PARTNER') then begin
+                        DefaultDimension."Dimension Value Code" := "Management Responsible";
+                        DefaultDimension.Modify();
+                    end else begin
+                        DefaultDimension."Table ID" := 18;
+                        DefaultDimension."No." := "No.";
+                        DefaultDimension."Dimension Code" := 'PARTNER';
+                        DefaultDimension."Dimension Value Code" := "Management Responsible";
+                        DefaultDimension.Insert(true);
+                    end;
+                end else begin
+                    Message('Ledelsesansvarlig SKAL være en partner.');
+                    "Management Responsible" := xRec."Management Responsible";
+                end
+            end;
         }
         field(50002; "Customer Responsible"; Code[20])
         {
@@ -58,6 +71,13 @@ tableextension 50100 "Customer_textension" extends Customer
             OptionMembers = "Active","Inactive";
             OptionCaptionML = ENU = 'Active,Inactive', DAN = 'Aktiv,Inaktiv';
             DataClassification = ToBeClassified;
+            trigger OnValidate()
+            begin
+                if Stage = Stage::Inactive then
+                    "Customer Sign Off Date" := Today
+                else
+                    "Customer Sign Off Date" := 0D;
+            end;
         }
         field(50009; "Expected Yearly Fee"; Decimal)
         {
@@ -106,4 +126,5 @@ tableextension 50100 "Customer_textension" extends Customer
     }
     var
         DefaultDimension: Record "Default Dimension";
+        DimensionValue: Record "Dimension Value";
 }

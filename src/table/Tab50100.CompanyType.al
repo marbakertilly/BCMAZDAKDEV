@@ -1,5 +1,7 @@
 table 50100 "Company Type"
 {
+    DrillDownPageId = "Company Type";
+    LookupPageId = "Company Type";
     CaptionML = ENU = 'Company Type', DAN = ' Virksomhedstype';
     DataClassification = ToBeClassified;
     /* Permissions = tabledata 50100 = rimd; */
@@ -24,5 +26,4 @@ table 50100 "Company Type"
             Clustered = true;
         }
     }
-
 }

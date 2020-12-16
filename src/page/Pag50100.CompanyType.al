@@ -5,7 +5,7 @@ page 50100 "Company Type"
     CaptionML = ENU = 'Company Type', DAN = 'Virksomhedstype';
     PageType = List;
     SourceTable = "Company Type";
-    UsageCategory = Administration;
+    UsageCategory = Lists;
 
     layout
     {
