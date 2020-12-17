@@ -470,6 +470,12 @@ report 50101 "SalesInvoiceBT_2"
             column(InterestRate_FinanceChargeTerms; InterestRateFinanceChargeTerms)
             {
             }
+            column(OCRReference; OCRReference)
+            {
+            }
+            column(OCRReference_Lbl; OCRReferenceLbl)
+            {
+            }
             dataitem(Line; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = FIELD("No.");
@@ -1201,6 +1207,8 @@ report 50101 "SalesInvoiceBT_2"
                     else
                         RemainingAmountTxt := '';
 
+                GenerateOCRReferenceFromPaymentManagement365();
+
                 OnAfterGetSalesHeader(Header);
 
                 TotalSubTotal := 0;
@@ -1478,7 +1486,8 @@ report 50101 "SalesInvoiceBT_2"
         DocumentTitleLbl2: Label 'Faktura';
         DocumentNoLbl2: Label 'Fakturanr.';
         CustomerNoLbl2: Label 'Kundenr.';
-
+        OCRReference: Text;
+        OCRReferenceLbl: Label 'FIK:';
 
     local procedure InitLogInteraction()
     begin
@@ -1715,5 +1724,12 @@ report 50101 "SalesInvoiceBT_2"
         end;
 
         exit(true);
+    end;
+
+    local procedure GenerateOCRReferenceFromPaymentManagement365()
+    var
+        PaymentMgt: Codeunit "Payment Mgt.";
+    begin
+        OCRReference := PaymentMgt.CreateOCRReferenceForPostedSalesInvoiceWithType71(Header);
     end;
 }

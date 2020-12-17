@@ -22,6 +22,12 @@
       "publisher": "Microsoft",
       "name": "Base Application",
       "version": "16.0.0.0"
+    },
+    {
+      "id": "14340ba6-5934-4145-8e14-dbf1846fef80",
+      "publisher": "Continia Software",
+      "name": "Continia Payment Management 365",
+      "version": "1.8.0.0"
     }
   ],
   "screenshots": [],
