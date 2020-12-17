@@ -1,4 +1,4 @@
-pageextension 50102 PurchaseJournalExt extends "Purchase Journal"
+pageextension 50102 "PurchaseJournalExt" extends "Purchase Journal"
 {
     layout
     {
