@@ -1,6 +1,6 @@
 report 50101 "SalesInvoiceBT_2"
 {
-    RDLCLayout = './StandardSalesInvoice.rdlc';
+    RDLCLayout = './src/layout/Rep50101.SalesInvoiceBT2.rdlc';
     WordLayout = './StandardSalesInvoice.docx';
     Caption = 'Sales - Invoice';
     DefaultLayout = RDLC;
