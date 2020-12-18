@@ -2,7 +2,7 @@
   "id": "f15aacc8-0503-4a08-a3a1-79aa9e1bd891",
   "name": "BCBAKERTILLY",
   "publisher": "Default publisher",
-  "version": "1.0.0.9",
+  "version": "1.0.1.0",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -22,6 +22,12 @@
       "publisher": "Microsoft",
       "name": "Base Application",
       "version": "16.0.0.0"
+    },
+    {
+      "id": "644f7e5b-a81c-408a-aaa2-766e655a80a3",
+      "publisher": "Microsoft",
+      "name": "Payment and Reconciliation Formats (DK)",
+      "version": "1.8.0.0"
     },
     {
       "id": "14340ba6-5934-4145-8e14-dbf1846fef80",
