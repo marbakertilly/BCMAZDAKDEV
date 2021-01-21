@@ -13,5 +13,12 @@ pageextension 50102 "PurchaseJournalExt" extends "Purchase Journal"
                 ApplicationArea = All;
             }
         }
+        addafter("Bal. Gen. Prod. Posting Group")
+        {
+            field("Deferral Code"; "Deferral Code")
+            {
+                ApplicationArea = All;
+            }
+        }
     }
 }

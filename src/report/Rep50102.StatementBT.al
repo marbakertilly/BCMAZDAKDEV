@@ -1,7 +1,7 @@
 report 50102 "Statement_BT"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './Statement.rdlc';
+    RDLCLayout = './src/layout/Rep50101.Statement_Ny.rdlc';
     Caption = 'Statement';
 
     dataset
@@ -179,6 +179,14 @@ report 50102 "Statement_BT"
                 }
                 column(CustomerNo_Lbl; CustomerNoLbl)
                 {
+                }
+                column(BankPaymentLbl; BankPaymentLbl)
+                {
+
+                }
+                column(CustAndInvoiceNoLbl; CustAndInvoiceNoLbl)
+                {
+
                 }
                 dataitem(CurrencyLoop; "Integer")
                 {
@@ -901,16 +909,18 @@ report 50102 "Statement_BT"
         AgingBandCurrencyCode: Code[20];
         Text013Txt: Label 'Due Date,Posting Date';
         Text014Txt: Label 'Application Writeoffs';
-        Balance1Lbl: Label 'Startsaldo';
-        DateLbl: Label 'Dato';
-        CustomerNoLbl: Label 'Kundenr.';
-        StatementNoLbl: Label 'Kontoudtog';
-        StartdateLbl: Label 'Startdato';
-        EnddateLbl: Label 'Slutdato';
-        DueDateLbl: Label 'Forfaldsdato';
-        RemainingAmountLbl: Label 'Restbeløb';
-        BalanceLbl: Label 'Saldo';
-        StatementLbl: Label 'Kontoudtog';
+        Balance1Lbl: Label 'Opening balance';
+        DateLbl: Label 'Date';
+        CustomerNoLbl: Label 'Customer no.';
+        StatementNoLbl: Label 'Statement';
+        StartdateLbl: Label 'Starting';
+        EnddateLbl: Label 'Ending';
+        DueDateLbl: Label 'Due date';
+        RemainingAmountLbl: Label 'Remaining amount';
+        BalanceLbl: Label 'Balance';
+        StatementLbl: Label 'Statement';
+        BankPaymentLbl: Label 'Payment can be made to our bank account in';
+        CustAndInvoiceNoLbl: Label 'Please state customer number';
 
         [InDataSet]
         LogInteractionEnable: Boolean;

@@ -456,7 +456,6 @@ report 50101 "SalesInvoiceBT_2"
             }
             column(DocumentTitle_Lbl2; DocumentTitleLbl2)
             {
-                CaptionML = ENU = 'Invoice', DAN = 'Faktura';
             }
             column(DocumentNo_Lbl2; DocumentNoLbl2)
             {
@@ -1472,20 +1471,20 @@ report 50101 "SalesInvoiceBT_2"
         QtyLbl: Label 'Qty', Comment = 'Short form of Quantity';
         PriceLbl: Label 'Price';
         PricePerLbl: Label 'Price per';
-        TextLbl: Label 'Tekst';
-        AmountLbl: Label 'Beløb';
+        TextLbl: Label 'Text';
+        AmountLbl: Label 'Amount';
         Subtotal1Lbl: Label 'Subtotal:';
         Total1Lbl: Label 'Total';
-        PaymentTermsLbl: Label 'Betalingsbetingelser';
-        PaymentWithinLbl: Label 'Betales senest';
-        AfterDueDateLbl: Label 'Herefter beregnes';
-        InterestTermsLbl: Label 'rente pr. måned';
-        BankPaymentLbl: Label 'Ved betaling til bankkonto';
-        CustAndInvoiceNoLbl: Label 'angiv venligst kunde- og fakturanummer';
+        PaymentTermsLbl: Label 'Payment terms';
+        PaymentWithinLbl: Label 'Payment is due no later than';
+        AfterDueDateLbl: Label 'After this';
+        InterestTermsLbl: Label 'interest will accumulate per month';
+        BankPaymentLbl: Label 'Payment made to bank account';
+        CustAndInvoiceNoLbl: Label 'please state customer number and invoice number';
         TextExtendedTextLine: Label 'Baker Tilly Denmark Godkendt Revisionspartnerselskab, som driver virksomhed under navnet Baker Tilly, er en del af det globale netværk Baker Tilly International Ltd., hvis medlemsfirmaer er selvstændige og uafhængige juridiske enheder.';
-        DocumentTitleLbl2: Label 'Faktura';
-        DocumentNoLbl2: Label 'Fakturanr.';
-        CustomerNoLbl2: Label 'Kundenr.';
+        DocumentTitleLbl2: Label 'Invoice';
+        DocumentNoLbl2: Label 'Invoice no.';
+        CustomerNoLbl2: Label 'Customer no.';
         OCRReference: Text;
         OCRReferenceLbl: Label 'FIK:';
 

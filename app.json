@@ -2,7 +2,7 @@
   "id": "f15aacc8-0503-4a08-a3a1-79aa9e1bd891",
   "name": "BCBAKERTILLY",
   "publisher": "Default publisher",
-  "version": "1.0.1.1",
+  "version": "1.0.1.7",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -38,6 +38,9 @@
   ],
   "screenshots": [],
   "platform": "16.0.0.0",
+  "features": [
+    "TranslationFile"
+  ],
   "idRanges": [
     {
       "from": 50100,

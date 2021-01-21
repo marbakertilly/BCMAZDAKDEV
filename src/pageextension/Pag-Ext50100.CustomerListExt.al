@@ -4,8 +4,18 @@
 
 pageextension 50100 "CustomerListExt" extends "Customer List"
 {
-    /*     trigger OnOpenPage();
-        begin
-            Message('App published: Hello world');
-        end; */
+    layout
+    {
+        addafter("Responsibility Center")
+        {
+            field("Management Responsible"; "Management Responsible")
+            {
+                ApplicationArea = all;
+            }
+            field("Customer Responsible"; "Customer Responsible")
+            {
+                ApplicationArea = all;
+            }
+        }
+    }
 }
