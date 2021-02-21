@@ -364,14 +364,14 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="CustomerAddress1">
+                                          <Textbox Name="Textbox14">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!CustomerAddress1.Value</Value>
+                                                    <Value>=Fields!Sell_to_Customer_Name.Value</Value>
                                                     <Style />
                                                   </TextRun>
                                                 </TextRuns>
@@ -380,7 +380,7 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>CustomerAddress1</rd:DefaultName>
+                                            <rd:DefaultName>Textbox14</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -391,6 +391,7 @@
                                             </Style>
                                           </Textbox>
                                           <ColSpan>2</ColSpan>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell />
@@ -2918,7 +2919,6 @@
                                               <PaddingRight>5pt</PaddingRight>
                                             </Style>
                                           </Textbox>
-                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>
@@ -4539,6 +4539,9 @@ Ck+HYlsZsl1A7bzVpqLcSz1eWt5qU7oVRWpBDmiH0Ostb/lfnNEdI5juQ+1wOa2pvEFTB3V+inA1gv2Z
         </Field>
         <Field Name="OCRReference_Lbl">
           <DataField>OCRReference_Lbl</DataField>
+        </Field>
+        <Field Name="Sell_to_Customer_Name">
+          <DataField>Sell_to_Customer_Name</DataField>
         </Field>
         <Field Name="LineNo_Line">
           <DataField>LineNo_Line</DataField>

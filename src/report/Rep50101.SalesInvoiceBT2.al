@@ -475,6 +475,9 @@ report 50101 "SalesInvoiceBT_2"
             column(OCRReference_Lbl; OCRReferenceLbl)
             {
             }
+            column(Sell_to_Customer_Name; "Sell-to Customer Name")
+            {
+            }
             dataitem(Line; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = FIELD("No.");
@@ -1431,8 +1434,8 @@ report 50101 "SalesInvoiceBT_2"
         TotalPaymentDiscOnVAT: Decimal;
         RemainingAmount: Decimal;
         TransHeaderAmount: Decimal;
-        CurrencyCode: code[10];
-        InterestRateFinanceChargeTerms: Decimal;
+        CurrencyCode: code[10]; //BT
+        InterestRateFinanceChargeTerms: Decimal; //BT
         [InDataSet]
         LogInteractionEnable: Boolean;
         DisplayAssemblyInformation: Boolean;
@@ -1473,20 +1476,20 @@ report 50101 "SalesInvoiceBT_2"
         PricePerLbl: Label 'Price per';
         TextLbl: Label 'Text';
         AmountLbl: Label 'Amount';
-        Subtotal1Lbl: Label 'Subtotal:';
-        Total1Lbl: Label 'Total';
-        PaymentTermsLbl: Label 'Payment terms';
-        PaymentWithinLbl: Label 'Payment is due no later than';
-        AfterDueDateLbl: Label 'After this';
-        InterestTermsLbl: Label 'interest will accumulate per month';
-        BankPaymentLbl: Label 'Payment made to bank account';
-        CustAndInvoiceNoLbl: Label 'please state customer number and invoice number';
+        Subtotal1Lbl: Label 'Subtotal:'; //BT
+        Total1Lbl: Label 'Total'; //BT
+        PaymentTermsLbl: Label 'Payment terms'; //BT
+        PaymentWithinLbl: Label 'Payment is due no later than'; //BT
+        AfterDueDateLbl: Label 'After this'; //BT
+        InterestTermsLbl: Label 'interest will accumulate per month'; //BT
+        BankPaymentLbl: Label 'Payment made to bank account'; //BT
+        CustAndInvoiceNoLbl: Label 'please state customer number and invoice number'; //BT
         TextExtendedTextLine: Label 'Baker Tilly Denmark Godkendt Revisionspartnerselskab, som driver virksomhed under navnet Baker Tilly, er en del af det globale netværk Baker Tilly International Ltd., hvis medlemsfirmaer er selvstændige og uafhængige juridiske enheder.';
-        DocumentTitleLbl2: Label 'Invoice';
-        DocumentNoLbl2: Label 'Invoice no.';
-        CustomerNoLbl2: Label 'Customer no.';
-        OCRReference: Text;
-        OCRReferenceLbl: Label 'FIK:';
+        DocumentTitleLbl2: Label 'Invoice'; //BT
+        DocumentNoLbl2: Label 'Invoice no.'; //BT
+        CustomerNoLbl2: Label 'Customer no.'; //BT
+        OCRReference: Text; //BT
+        OCRReferenceLbl: Label 'FIK:'; //BT
 
     local procedure InitLogInteraction()
     begin

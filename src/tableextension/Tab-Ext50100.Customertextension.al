@@ -5,7 +5,7 @@ tableextension 50100 "Customer_textension" extends Customer
         field(50001; "Management Responsible"; Code[20])
         {
             //Caption = 'Ledelsansvarlig';
-            CaptionML = ENU = 'Management Responsible', DAN = 'Ledelsansvarlig';
+            CaptionML = ENU = 'Management Responsible', DAN = 'Ledelsesansvarlig';
             DataClassification = ToBeClassified;
             TableRelation = Employee."No.";
             trigger OnValidate()
