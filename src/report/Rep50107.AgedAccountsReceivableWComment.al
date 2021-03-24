@@ -188,6 +188,9 @@ report 50107 "AgedAccountsReceivableW.C."
                 column(Management_Responsible; "Management Responsible")
                 {
                 }
+                column(ResponsibleGroupNo; ResponsibleGroupNo)
+                {
+                }
                 //<<BT - columns
                 dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
                 {
@@ -519,8 +522,10 @@ report 50107 "AgedAccountsReceivableW.C."
                             if NewPagePercustomer and (NumberOfCurrencies > 0) then
                                 NextPageGroupNo := PageGroupNo + 1;
                             //BT
+                            ResponsibleGroupNo := NextRespGroupNo;
                             if NewPagePerResponsible and (NumberOfCurrencies > 0) then
-                                NextPageGroupNo := PageGroupNo + 1;
+                                NextRespGroupNo := ResponsibleGroupNo + 1;
+                            //NextPageGroupNo := PageGroupNo + 1;
                             //BT
                         end;
                     }
@@ -555,7 +560,8 @@ report 50107 "AgedAccountsReceivableW.C."
                     if NewPagePercustomer then
                         PageGroupNo += 1;
                     if NewPagePerResponsible then
-                        PageGroupNo += 1;
+                        ResponsibleGroupNo += 1;
+                    //PageGroupNo += 1;
                     TempCurrency.Reset();
                     TempCurrency.DeleteAll();
                     TempCustLedgEntry.Reset();
@@ -726,6 +732,8 @@ report 50107 "AgedAccountsReceivableW.C."
 
         PageGroupNo := 1;
         NextPageGroupNo := 1;
+        ResponsibleGroupNo := 1; // BT
+        NextRespGroupNo := 1; //BT
         CustFilterCheck := (CustFilter <> 'No.');
 
         CompanyDisplayName := COMPANYPROPERTY.DisplayName;
@@ -784,6 +792,8 @@ report 50107 "AgedAccountsReceivableW.C."
         CompanyDisplayName: Text;
         //BT variabler
         NewPagePerResponsible: Boolean;
+        ResponsibleGroupNo: Integer;
+        NextRespGroupNo: Integer;
 
     local procedure CalcDates()
     var
@@ -923,7 +933,8 @@ report 50107 "AgedAccountsReceivableW.C."
         PrintDetails := NewPrintDetails;
         HeadingType := NewHeadingType;
         NewPagePercustomer := NewPagePercust;
-        NewPagePerResponsible := NewPagePerResp;
+        NewPagePerResponsible := true;
+        //NewPagePerResponsible := NewPagePerResp;
     end;
 
     local procedure CopyDimFiltersFromCustomer(var CustLedgerEntry: Record "Cust. Ledger Entry")

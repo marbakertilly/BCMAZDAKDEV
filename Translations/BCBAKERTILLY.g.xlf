@@ -3,6 +3,51 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="BCBAKERTILLY">
     <body>
       <group id="body">
+        <trans-unit id="Table 2709812748 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TeamMemberView</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TeamMemberView - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2709812748 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TeamMemberView - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2709812748 - Field 3536124364 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Owner Projects Count</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TeamMemberView - Field Owner Projects Count Open - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2709812748 - Field 119368833 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Owner WIP</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TeamMemberView - Field Owner WIP - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2709812748 - Field 789587531 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Manager Projects Count</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TeamMemberView - Field Project Manager Count Open - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2709812748 - Field 2868331708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Manager WIP</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TeamMemberView - Field Project Manager WIP - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2709812748 - Field 4023654594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Owner Projects Count Closed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TeamMemberView - Field Owner Projects Count Closed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2709812748 - Field 479093985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Manager Count Closed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TeamMemberView - Field Project Manager Count Closed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2709812748 - Field 143592048 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>USER ID Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TeamMemberView - Field User ID Filter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 45687838 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer Card Page Ext</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1892,6 +1937,11 @@
           <source>Please state customer number</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Statement_BT - NamedType CustAndInvoiceNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3663251928 - NamedType 2813721509" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Statement_BT - NamedType InvoiceLbl</note>
         </trans-unit>
         <trans-unit id="Report 3663251928 - NamedType 4207509668" size-unit="char" translate="yes" xml:space="preserve">
           <source>-%1</source>

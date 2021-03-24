@@ -2624,6 +2624,9 @@ Ck+HYlsZsl1A7bzVpqLcSz1eWt5qU7oVRWpBDmiH0Ostb/lfnNEdI5juQ+1wOa2pvEFTB3V+inA1gv2Z
         <Field Name="CustAndInvoiceNoLbl">
           <DataField>CustAndInvoiceNoLbl</DataField>
         </Field>
+        <Field Name="InvoiceLbl">
+          <DataField>InvoiceLbl</DataField>
+        </Field>
         <Field Name="Currency2Code_CustLedgEntryHdr">
           <DataField>Currency2Code_CustLedgEntryHdr</DataField>
         </Field>
@@ -2716,6 +2719,9 @@ Ck+HYlsZsl1A7bzVpqLcSz1eWt5qU7oVRWpBDmiH0Ostb/lfnNEdI5juQ+1wOa2pvEFTB3V+inA1gv2Z
         </Field>
         <Field Name="Currency2Code">
           <DataField>Currency2Code</DataField>
+        </Field>
+        <Field Name="DocType">
+          <DataField>DocType</DataField>
         </Field>
         <Field Name="CurrencyCode3_CustLedgEntryFooter">
           <DataField>CurrencyCode3_CustLedgEntryFooter</DataField>

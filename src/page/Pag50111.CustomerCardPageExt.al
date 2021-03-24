@@ -14,7 +14,7 @@ page 50111 CustomerCardPageExt
             group(General)
             {
                 Caption = 'General';
-                field("No."; "No.")
+                field("No."; rec."No.")
                 {
                     ApplicationArea = All;
                     Importance = Standard;
@@ -1193,7 +1193,7 @@ page 50111 CustomerCardPageExt
         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
         CRMIntegrationManagement: Codeunit "CRM Integration Management";
         CustomerMgt: Codeunit "Customer Mgt.";
-        FormatAddress: Codeunit "Format Address";
+        FormatAddress: Codeunit 365;
         isEditable: Boolean;
 
         StyleTxt: Text;

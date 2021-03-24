@@ -808,9 +808,9 @@ report 50103 ReminderBT
         VATClause: Record "VAT Clause";
         DimSetEntry: Record "Dimension Set Entry";
         CurrExchRate: Record "Currency Exchange Rate";
-        Language: Codeunit Language;
-        FormatAddr: Codeunit "Format Address";
-        SegManagement: Codeunit SegManagement;
+        Language: Codeunit 43;
+        FormatAddr: Codeunit 365;
+        SegManagement: Codeunit 5051;
         CustAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
         VATNoText: Text[30];
@@ -888,7 +888,7 @@ report 50103 ReminderBT
 
     local procedure IsReportInPreviewMode(): Boolean
     var
-        MailManagement: Codeunit "Mail Management";
+        MailManagement: Codeunit 9520;
     begin
         exit(CurrReport.Preview or MailManagement.IsHandlingGetEmailBody);
     end;

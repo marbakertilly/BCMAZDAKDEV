@@ -1396,10 +1396,10 @@ report 50101 "SalesInvoiceBT_2"
         SellToContact: Record Contact;
         BillToContact: Record Contact;
         FinanceChargeTerms: Record "Finance Charge Terms";
-        Language: Codeunit Language;
-        FormatAddr: Codeunit "Format Address";
+        Language: Codeunit 43;
+        FormatAddr: Codeunit 365;
         FormatDocument: Codeunit "Format Document";
-        SegManagement: Codeunit SegManagement;
+        SegManagement: Codeunit 5051;
         WorkDescriptionInstream: InStream;
         JobNo: Code[20];
         JobTaskNo: Code[20];
@@ -1546,7 +1546,7 @@ report 50101 "SalesInvoiceBT_2"
 
     local procedure IsReportInPreviewMode(): Boolean
     var
-        MailManagement: Codeunit "Mail Management";
+        MailManagement: Codeunit 9520;
     begin
         exit(CurrReport.Preview or MailManagement.IsHandlingGetEmailBody);
     end;

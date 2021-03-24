@@ -2220,6 +2220,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Statement_BT - NamedType CurrReportPageNoCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 3663251928 - NamedType 2813721509" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice</source>
+          <target>Faktura</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Statement_BT - NamedType InvoiceLbl</note>
+        </trans-unit>
         <trans-unit id="Report 1744339571 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales - Credit Memo</source>
           <target>Salg - kreditnota</target>

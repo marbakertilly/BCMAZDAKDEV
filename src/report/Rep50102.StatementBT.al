@@ -182,11 +182,12 @@ report 50102 "Statement_BT"
                 }
                 column(BankPaymentLbl; BankPaymentLbl)
                 {
-
                 }
                 column(CustAndInvoiceNoLbl; CustAndInvoiceNoLbl)
                 {
-
+                }
+                column(InvoiceLbl; InvoiceLbl) //MAR
+                {
                 }
                 dataitem(CurrencyLoop; "Integer")
                 {
@@ -284,6 +285,9 @@ report 50102 "Statement_BT"
                             column(Currency2Code; TempCurrency2.Code)
                             {
                             }
+                            column(DocType; DocType) //MAR
+                            {
+                            }
 
                             trigger OnAfterGetRecord()
                             var
@@ -302,6 +306,7 @@ report 50102 "Statement_BT"
                                             CustLedgerEntry.SetRange("Date Filter", 0D, EndDate);
                                             CustLedgerEntry.CalcFields("Remaining Amount");
                                             RemainingAmount := CustLedgerEntry."Remaining Amount";
+                                            DocType := "Document Type".AsInteger(); //MAR
                                         end;
                                     "Entry Type"::Application:
                                         begin
@@ -921,6 +926,8 @@ report 50102 "Statement_BT"
         StatementLbl: Label 'Statement';
         BankPaymentLbl: Label 'Payment can be made to our bank account in';
         CustAndInvoiceNoLbl: Label 'Please state customer number';
+        DocType: Integer; // MAR
+        InvoiceLbl: Label 'Invoice'; //MAR
 
         [InDataSet]
         LogInteractionEnable: Boolean;
