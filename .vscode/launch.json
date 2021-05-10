@@ -19,18 +19,18 @@
         {
             "type": "al",
             "request": "launch",
-            "name": "TEST_BT",
+            "name": "DEV_BT",
             "authentication": "AAD",
             "tenant": "7dc806cf-d58f-4497-9bae-9e2c0fe09e81",
             "environmentType": "Sandbox",
-            "environmentName": "TEST_BT",
+            "environmentName": "DEV_BT",
             "startupObjectId": 9022,
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "schemaUpdateMode": "Synchronize"
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }

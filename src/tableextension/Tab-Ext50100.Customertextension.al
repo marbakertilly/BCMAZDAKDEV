@@ -5,7 +5,7 @@ tableextension 50100 "Customer_textension" extends Customer
         field(50001; "Management Responsible"; Code[20])
         {
             //Caption = 'Ledelsansvarlig';
-            CaptionML = ENU = 'Management Responsible', DAN = 'Ledelsesansvarlig';
+            CaptionML = ENU = 'Management Responsible', DAN = 'Kundeejer';
             DataClassification = ToBeClassified;
             TableRelation = Employee."No.";
             trigger OnValidate()
@@ -29,7 +29,7 @@ tableextension 50100 "Customer_textension" extends Customer
         }
         field(50002; "Customer Responsible"; Code[20])
         {
-            CaptionML = ENU = 'Customer Provider', DAN = 'Kundeansvarlig';
+            CaptionML = ENU = 'Customer Provider', DAN = 'Sekundær kundejer';
             DataClassification = ToBeClassified;
             TableRelation = Employee."No.";
         }
