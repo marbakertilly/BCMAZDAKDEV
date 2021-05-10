@@ -31,6 +31,22 @@
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
             "schemaUpdateMode": "ForceSync"
+        },
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Development",
+            "authentication": "AAD",
+            "tenant": "7dc806cf-d58f-4497-9bae-9e2c0fe09e81",
+            "environmentType": "Sandbox",
+            "environmentName": "Development",
+            "startupObjectId": 9022,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }
