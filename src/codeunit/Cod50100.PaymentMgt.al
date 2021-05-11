@@ -15,4 +15,23 @@ codeunit 50100 "Payment Mgt."
         exit('+' + Format(Enum::"CPM OCR Reference Type"::"71") + '<' + OCRReferenceInterface.GenerateOcrReference(SalesInvoiceHeader, Enum::"CPM OCR Reference Type"::"71") + ' +' + KreditorNummer + '<');
         // exit('+' + Format(Enum::"CPM OCR Reference Type"::"71") + '<' + OCRReferenceInterface.GenerateOcrReference(SalesInvoiceHeader, Enum::"CPM OCR Reference Type"::"71") + ' +' + CompanyInfo.BankCreditorNo + '<');
     end;
+    /* 
+        procedure GetBankInformationResponsibilityCenter(SalesInvoiceHeader2: Record "Sales Invoice Header"; BankBranchNo: Text[20]; BankAccountNo: Text[30]; IBAN: Code[50]; SWIFT: Code[20]): Text
+        var
+            CompanyInfo2: Record "Company Information";
+            ResponsibilityCenter2: Record "Responsibility Center";
+        begin
+            CompanyInfo2.get();
+            if ResponsibilityCenter2.Get(SalesInvoiceHeader2."Responsibility Center") then begin
+                BankBranchNo := ResponsibilityCenter2."Bank Branch No.";
+                BankAccountNo := ResponsibilityCenter2."Bank Account No.";
+                IBAN := ResponsibilityCenter2.IBAN;
+                SWIFT := ResponsibilityCenter2."SWIFT Code";
+            end else begin
+                BankBranchNo := CompanyInfo2."Bank Branch No.";
+                BankAccountNo := CompanyInfo2."Bank Account No.";
+                IBAN := CompanyInfo2.IBAN;
+                SWIFT := CompanyInfo2."SWIFT Code";
+            end
+        end; */
 }
