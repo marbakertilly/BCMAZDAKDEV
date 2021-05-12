@@ -12,6 +12,10 @@ pageextension 50108 GLentryPext extends "General Ledger Entries"
             {
                 ApplicationArea = all;
             }
+            field("VAT Reg Number"; Rec."VAT Reg Number")
+            {
+                ApplicationArea = all;
+            }
         }
     }
 }
