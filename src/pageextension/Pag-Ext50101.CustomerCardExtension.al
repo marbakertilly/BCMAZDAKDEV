@@ -85,6 +85,10 @@ pageextension 50101 "CustomerCardExtension" extends "Customer Card"
                 {
                     ApplicationArea = All;
                 }
+                field("Primary Industry Code"; Rec."Primary Industry Code")
+                {
+                    ApplicationArea = All;
+                }
 
 
             }

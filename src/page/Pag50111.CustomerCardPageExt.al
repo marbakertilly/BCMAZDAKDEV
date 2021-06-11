@@ -856,6 +856,10 @@ page 50111 CustomerCardPageExt
                 {
                     ApplicationArea = All;
                 }
+                field("Primary Industry Code"; "Primary Industry Code")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
         area(factboxes)

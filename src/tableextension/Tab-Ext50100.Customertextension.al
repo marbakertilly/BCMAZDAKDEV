@@ -123,6 +123,11 @@ tableextension 50100 "Customer_textension" extends Customer
             DataClassification = ToBeClassified;
             TableRelation = "Company Type";
         }
+        field(50017; "Primary Industry Code"; Code[10])
+        {
+            CaptionML = ENU = 'Primary Industry Code', DAN = 'Branchekode';
+            DataClassification = ToBeClassified;
+        }
     }
     var
         DefaultDimension: Record "Default Dimension";
