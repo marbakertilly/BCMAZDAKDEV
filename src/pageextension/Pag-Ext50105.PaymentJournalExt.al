@@ -4,7 +4,7 @@ pageextension 50105 PaymentJournalExt extends "Payment Journal"
     {
         addafter("Account No.")
         {
-            field("Account Name 2"; "Account Name 2")
+            field("Account Name 2"; Rec."Account Name 2")
             {
                 ApplicationArea = All;
             }

@@ -8,11 +8,11 @@ pageextension 50100 "CustomerListExt" extends "Customer List"
     {
         addafter("Responsibility Center")
         {
-            field("Management Responsible"; "Management Responsible")
+            field("Management Responsible"; Rec."Management Responsible")
             {
                 ApplicationArea = all;
             }
-            field("Customer Responsible"; "Customer Responsible")
+            field("Customer Responsible"; Rec."Customer Responsible")
             {
                 ApplicationArea = all;
             }

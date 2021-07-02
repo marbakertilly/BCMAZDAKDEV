@@ -6,23 +6,23 @@ pageextension 50103 "ResponsibilityCenterCardExt" extends "Responsibility Center
         {
             group(Betalinger)
             {
-                field("Bank Name"; "Bank Name")
+                field("Bank Name"; Rec."Bank Name")
                 {
                     ApplicationArea = All;
                 }
-                field("Bank Branch No."; "Bank Branch No.")
+                field("Bank Branch No."; Rec."Bank Branch No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Bank Account No."; "Bank Account No.")
+                field("Bank Account No."; Rec."Bank Account No.")
                 {
                     ApplicationArea = All;
                 }
-                field("SWIFT Code"; "SWIFT Code")
+                field("SWIFT Code"; Rec."SWIFT Code")
                 {
                     ApplicationArea = All;
                 }
-                field(IBAN; IBAN)
+                field(IBAN; Rec.IBAN)
                 {
                     ApplicationArea = All;
                 }
@@ -32,15 +32,15 @@ pageextension 50103 "ResponsibilityCenterCardExt" extends "Responsibility Center
         {
             group(Betalingsoplysninger)
             {
-                field("Payment Card Type"; "Payment Card Type")
+                field("Payment Card Type"; Rec."Payment Card Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Payment Account No."; "Payment Account No.")
+                field("Payment Account No."; Rec."Payment Account No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Customer No. Length"; "Customer No. Length")
+                field("Customer No. Length"; Rec."Customer No. Length")
                 {
                     ApplicationArea = All;
                 }

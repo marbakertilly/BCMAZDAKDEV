@@ -13,75 +13,75 @@ pageextension 50101 "CustomerCardExtension" extends "Customer Card"
         {
             group("Baker Tilly")
             {
-                field("Management Responsible"; "Management Responsible")
+                field("Management Responsible"; Rec."Management Responsible")
                 {
                     ApplicationArea = All;
                 }
-                field("Customer Responsible"; "Customer Responsible")
+                field("Customer Responsible"; Rec."Customer Responsible")
                 {
                     ApplicationArea = All;
                 }
-                field("Lead Provider"; "Lead Provider")
+                field("Lead Provider"; Rec."Lead Provider")
                 {
                     ApplicationArea = All;
                 }
-                field("VAT Registered"; "VAT Registered")
+                field("VAT Registered"; Rec."VAT Registered")
                 {
                     ApplicationArea = All;
                     trigger OnValidate()
                     begin
-                        if "VAT Registered" then
+                        if Rec."VAT Registered" then
                             isEditable := true
                         else
                             isEditable := false;
                     end;
                 }
-                field("VAT Period"; "VAT Period")
+                field("VAT Period"; Rec."VAT Period")
                 {
                     ApplicationArea = All;
                     Editable = isEditable;
                 }
-                field(Paysum; Paysum)
+                field(Paysum; Rec.Paysum)
                 {
                     ApplicationArea = All;
                 }
-                field("Affiliated Customer"; "Affiliated Customer")
+                field("Affiliated Customer"; Rec."Affiliated Customer")
                 {
                     ApplicationArea = All;
                 }
-                field(Stage; Stage)
+                field(Stage; Rec.Stage)
                 {
                     ApplicationArea = All;
                 }
-                field("Expected Yearly Fee"; "Expected Yearly Fee")
+                field("Expected Yearly Fee"; Rec."Expected Yearly Fee")
                 {
                     ApplicationArea = All;
                 }
-                field("General Closing Date"; "General Closing Date")
+                field("General Closing Date"; Rec."General Closing Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Accounting Class"; "Accounting Class")
+                field("Accounting Class"; Rec."Accounting Class")
                 {
                     ApplicationArea = All;
                 }
-                field("BT International"; "BT International")
+                field("BT International"; Rec."BT International")
                 {
                     ApplicationArea = All;
                 }
-                field("ERP System"; "ERP System")
+                field("ERP System"; Rec."ERP System")
                 {
                     ApplicationArea = All;
                 }
-                field("Customer Sign On Date"; "Customer Sign On Date")
+                field("Customer Sign On Date"; Rec."Customer Sign On Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Customer Sign Off Date"; "Customer Sign Off Date")
+                field("Customer Sign Off Date"; Rec."Customer Sign Off Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Company Type Code"; "Company Type Code")
+                field("Company Type Code"; Rec."Company Type Code")
                 {
                     ApplicationArea = All;
                 }
