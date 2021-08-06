@@ -24,7 +24,8 @@ tableextension 50100 "Customer_textension" extends Customer
                 end else begin
                     Message('Ledelsesansvarlig SKAL være en partner.');
                     "Management Responsible" := xRec."Management Responsible";
-                end
+                end;
+                UpdateTimeLogOwner('999998', 'PNI', 'PNI');
             end;
         }
         field(50002; "Customer Responsible"; Code[20])
@@ -132,4 +133,37 @@ tableextension 50100 "Customer_textension" extends Customer
     var
         DefaultDimension: Record "Default Dimension";
         DimensionValue: Record "Dimension Value";
+
+    procedure UpdateTimeLogOwner(CustNumber: Code[20]; KAM1: Code[10]; KAM2: Code[10])
+    var
+
+        Client: HttpClient;
+        Content: HttpContent;
+        Response: HttpResponseMessage;
+        Request: HttpRequestMessage;
+        RequestHeaders: HttpHeaders;
+        ContentText: Text;
+        responseText: Text;
+    begin
+        Request.SetRequestUri('https://dublin.runmyjobs.cloud/baker-tilly-denmark/dev/api-soap/submit/WS_TL1');
+        Request.Method('POST');
+        Request.GetHeaders(RequestHeaders);
+        RequestHeaders.Clear();
+        ContentText := '<soapenv:Envelope xmlns:soapenv=http://schemas.xmlsoap.org/soap/envelope/ xmlns:red="Redwood-Software.customer.redwood.com"><soapenv:Header><SOAPAction>submit/WS_TL1</SOAPAction>';
+        ContentText += '</soapenv:Header><soapenv:Body><red:SubmitJobParameters>';
+        ContentText += '<red:CustID>' + CustNumber + '</red:CustID>';
+        ContentText += '<red:Kam1>' + KAM1 + '</red:Kam1>';
+        ContentText += '<red:Kam2>' + KAM2 + '</red:Kam2>';
+        ContentText += '</red:SubmitJobParameters></soapenv:Body></soapenv:Envelope>';
+        RequestHeaders.Add('SOAPAction', 'submit/WS_TL1');
+        RequestHeaders.Add('Accept', '*/*');
+        RequestHeaders.Add('Authorization', 'Basic cG5pQGJha2VydGlsbHkuZGs6U3RhbXBlMTIzXzc4OQ==');
+        Content.WriteFrom(ContentText);
+        Request.Content := Content;
+        client.Timeout(30000);
+        Client.Send(Request, Response);
+        Response.Content.ReadAs(responseText);
+        Message(responseText);
+    end;
+
 }
