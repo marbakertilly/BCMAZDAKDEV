@@ -1,4 +1,4 @@
-pageextension 50108 GLentryPext extends "General Ledger Entries"
+pageextension 50108 "GLentryPext" extends "General Ledger Entries"
 {
     layout
     {

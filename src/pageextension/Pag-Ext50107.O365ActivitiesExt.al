@@ -1,4 +1,4 @@
-pageextension 50107 O365ActivitiesExt extends "O365 Activities"
+pageextension 50107 "O365ActivitiesExt" extends "O365 Activities"
 {
     layout
     {

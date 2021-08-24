@@ -1,4 +1,4 @@
-pageextension 50109 GeneralJournalPExt extends "General Journal"
+pageextension 50109 "GeneralJournalPExt" extends "General Journal"
 {
     trigger OnModifyRecord(): Boolean
     var

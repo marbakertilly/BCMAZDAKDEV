@@ -1,4 +1,4 @@
-tableextension 50104 GLentryText extends "G/L Entry"
+tableextension 50104 "GLentryText" extends "G/L Entry"
 {
     fields
     {

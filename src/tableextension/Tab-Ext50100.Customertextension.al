@@ -9,6 +9,9 @@ tableextension 50100 "Customer_textension" extends Customer
             DataClassification = ToBeClassified;
             TableRelation = Employee."No.";
             trigger OnValidate()
+            var
+                StageText: Text[10];
+                cuTenantManagement: Codeunit "Environment Information";
             begin
                 if DimensionValue.Get('PARTNER', "Management Responsible") then begin
                     if DefaultDimension.Get(18, "No.", 'PARTNER') then begin
@@ -25,14 +28,25 @@ tableextension 50100 "Customer_textension" extends Customer
                     Message('Ledelsesansvarlig SKAL være en partner.');
                     "Management Responsible" := xRec."Management Responsible";
                 end;
-                UpdateTimeLogOwner('999998', 'PNI', 'PNI');
+                StageText := Format(Stage);
+                if cuTenantManagement.IsProduction() then
+                    UpdateTimeLogOwner("No.", "Management Responsible", "Customer Responsible", StageText);
             end;
         }
         field(50002; "Customer Responsible"; Code[20])
         {
-            CaptionML = ENU = 'Customer Provider', DAN = 'Sekundær kundejer';
+            CaptionML = ENU = 'Customer Provider', DAN = 'Sekundær kundeejer';
             DataClassification = ToBeClassified;
             TableRelation = Employee."No.";
+            trigger OnValidate()
+            var
+                StageText: Text[10];
+                cuTenantManagement: Codeunit "Environment Information";
+            begin
+                StageText := Format(Stage);
+                if cuTenantManagement.IsProduction() then
+                    UpdateTimeLogOwner("No.", "Management Responsible", "Customer Responsible", StageText);
+            end;
         }
         field(50003; "Lead Provider"; Code[20])
         {
@@ -73,11 +87,21 @@ tableextension 50100 "Customer_textension" extends Customer
             OptionCaptionML = ENU = 'Active,Inactive', DAN = 'Aktiv,Inaktiv';
             DataClassification = ToBeClassified;
             trigger OnValidate()
+            var
+                StageText: Text[10];
+                cuTenantManagement: Codeunit "Environment Information";
             begin
-                if Stage = Stage::Inactive then
-                    "Customer Sign Off Date" := Today
-                else
+                if Stage = Stage::Inactive then begin
+                    "Customer Sign Off Date" := Today;
+                    StageText := Format(Stage);
+                    if cuTenantManagement.IsProduction() then
+                        UpdateTimeLogOwner("No.", "Management Responsible", "Customer Responsible", StageText);
+                end else begin
                     "Customer Sign Off Date" := 0D;
+                    StageText := Format(Stage);
+                    if cuTenantManagement.IsProduction() then
+                        UpdateTimeLogOwner("No.", "Management Responsible", "Customer Responsible", StageText);
+                end;
             end;
         }
         field(50009; "Expected Yearly Fee"; Decimal)
@@ -134,7 +158,7 @@ tableextension 50100 "Customer_textension" extends Customer
         DefaultDimension: Record "Default Dimension";
         DimensionValue: Record "Dimension Value";
 
-    procedure UpdateTimeLogOwner(CustNumber: Code[20]; KAM1: Code[10]; KAM2: Code[10])
+    procedure UpdateTimeLogOwner(CustNumber: Code[20]; KAM1: Code[10]; KAM2: Code[10]; Stage: Text[10])
     var
 
         Client: HttpClient;
@@ -149,21 +173,25 @@ tableextension 50100 "Customer_textension" extends Customer
         Request.Method('POST');
         Request.GetHeaders(RequestHeaders);
         RequestHeaders.Clear();
-        ContentText := '<soapenv:Envelope xmlns:soapenv=http://schemas.xmlsoap.org/soap/envelope/ xmlns:red="Redwood-Software.customer.redwood.com"><soapenv:Header><SOAPAction>submit/WS_TL1</SOAPAction>';
-        ContentText += '</soapenv:Header><soapenv:Body><red:SubmitJobParameters>';
+        ContentText := '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:red="Redwood-Software.customer.redwood.com">';
+        ContentText += '<soapenv:Header><SOAPAction>submit/WS_TL1</SOAPAction></soapenv:Header>';
+        ContentText += '<soapenv:Body><red:SubmitJobParameters>';
         ContentText += '<red:CustID>' + CustNumber + '</red:CustID>';
         ContentText += '<red:Kam1>' + KAM1 + '</red:Kam1>';
         ContentText += '<red:Kam2>' + KAM2 + '</red:Kam2>';
+        ContentText += '<red:KundeStatus>' + Stage + '</red:KundeStatus>';
         ContentText += '</red:SubmitJobParameters></soapenv:Body></soapenv:Envelope>';
         RequestHeaders.Add('SOAPAction', 'submit/WS_TL1');
         RequestHeaders.Add('Accept', '*/*');
-        RequestHeaders.Add('Authorization', 'Basic cG5pQGJha2VydGlsbHkuZGs6U3RhbXBlMTIzXzc4OQ==');
+        RequestHeaders.Add('Authorization', 'Basic YnR1c2VyOkJ0VXNlcjEyM180NTY=');
+        RequestHeaders.Add('Username', 'BT System User');
+        RequestHeaders.Add('Password', 'BtUser123_456');
         Content.WriteFrom(ContentText);
         Request.Content := Content;
         client.Timeout(30000);
         Client.Send(Request, Response);
         Response.Content.ReadAs(responseText);
-        Message(responseText);
+        //Message(responseText);
     end;
 
 }

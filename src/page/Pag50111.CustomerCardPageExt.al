@@ -1,4 +1,4 @@
-page 50111 CustomerCardPageExt
+page 50111 "CustomerCardPageExt"
 {
 
     Caption = 'Customer Card Page Ext';

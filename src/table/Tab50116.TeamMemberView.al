@@ -1,4 +1,4 @@
-table 50116 TeamMemberView
+table 50116 "TeamMemberView"
 {
     Caption = 'TeamMemberView';
     DataClassification = ToBeClassified;

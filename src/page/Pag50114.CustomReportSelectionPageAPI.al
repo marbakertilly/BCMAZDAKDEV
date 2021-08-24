@@ -1,4 +1,4 @@
-page 50114 CustomReportSelectionPageAPI
+page 50114 "CustomReportSelectionPageAPI"
 {
     Caption = 'Document Layouts API';
     DataCaptionFields = "Source No.";

@@ -1,4 +1,4 @@
-report 50106 SalesCreditMemoBT
+report 50106 "SalesCreditMemoBT"
 {
     RDLCLayout = './src/layout/Rep50106.SalesCreditMemoBT.rdlc';
     WordLayout = './StandardSalesCreditMemo.docx';

@@ -1,4 +1,4 @@
-report 50103 ReminderBT
+report 50103 "ReminderBT"
 {
     DefaultLayout = RDLC;
     RDLCLayout = './src/layout/Rep50103.ReminderBT.rdlc';
