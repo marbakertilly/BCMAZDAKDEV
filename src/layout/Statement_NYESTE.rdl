@@ -827,7 +827,7 @@
                                                               <rd:DefaultName>textbox81</rd:DefaultName>
                                                               <ZIndex>7</ZIndex>
                                                               <Style>
-                                                                <VerticalAlign>Middle</VerticalAlign>
+                                                                <VerticalAlign>Top</VerticalAlign>
                                                                 <PaddingRight>5pt</PaddingRight>
                                                               </Style>
                                                             </Textbox>
@@ -836,6 +836,7 @@
                                                         <TablixCell>
                                                           <CellContents>
                                                             <Textbox Name="textbox84">
+                                                              <CanGrow>true</CanGrow>
                                                               <KeepTogether>true</KeepTogether>
                                                               <Paragraphs>
                                                                 <Paragraph>
@@ -853,7 +854,10 @@
                                                               <rd:DefaultName>textbox84</rd:DefaultName>
                                                               <ZIndex>5</ZIndex>
                                                               <Style>
-                                                                <VerticalAlign>Middle</VerticalAlign>
+                                                                <Border>
+                                                                  <Style>None</Style>
+                                                                </Border>
+                                                                <VerticalAlign>Top</VerticalAlign>
                                                                 <PaddingLeft>5pt</PaddingLeft>
                                                                 <PaddingRight>5pt</PaddingRight>
                                                               </Style>
@@ -884,11 +888,12 @@
                                                               <rd:DefaultName>textbox85</rd:DefaultName>
                                                               <ZIndex>4</ZIndex>
                                                               <Style>
-                                                                <VerticalAlign>Middle</VerticalAlign>
+                                                                <VerticalAlign>Top</VerticalAlign>
                                                                 <PaddingLeft>5pt</PaddingLeft>
                                                                 <PaddingRight>5pt</PaddingRight>
                                                               </Style>
                                                             </Textbox>
+                                                            <rd:Selected>true</rd:Selected>
                                                           </CellContents>
                                                         </TablixCell>
                                                         <TablixCell>
@@ -914,11 +919,12 @@
                                                               <rd:DefaultName>textbox86</rd:DefaultName>
                                                               <ZIndex>2</ZIndex>
                                                               <Style>
-                                                                <VerticalAlign>Middle</VerticalAlign>
+                                                                <VerticalAlign>Top</VerticalAlign>
                                                                 <PaddingLeft>5pt</PaddingLeft>
                                                                 <PaddingRight>5pt</PaddingRight>
                                                               </Style>
                                                             </Textbox>
+                                                            <rd:Selected>true</rd:Selected>
                                                           </CellContents>
                                                         </TablixCell>
                                                         <TablixCell>
@@ -944,11 +950,12 @@
                                                               <rd:DefaultName>textbox87</rd:DefaultName>
                                                               <ZIndex>1</ZIndex>
                                                               <Style>
-                                                                <VerticalAlign>Middle</VerticalAlign>
+                                                                <VerticalAlign>Top</VerticalAlign>
                                                                 <PaddingLeft>5pt</PaddingLeft>
                                                                 <PaddingRight>5pt</PaddingRight>
                                                               </Style>
                                                             </Textbox>
+                                                            <rd:Selected>true</rd:Selected>
                                                           </CellContents>
                                                         </TablixCell>
                                                         <TablixCell>
@@ -973,10 +980,11 @@
                                                               </Paragraphs>
                                                               <rd:DefaultName>textbox88</rd:DefaultName>
                                                               <Style>
-                                                                <VerticalAlign>Middle</VerticalAlign>
+                                                                <VerticalAlign>Top</VerticalAlign>
                                                                 <PaddingLeft>5pt</PaddingLeft>
                                                               </Style>
                                                             </Textbox>
+                                                            <rd:Selected>true</rd:Selected>
                                                           </CellContents>
                                                         </TablixCell>
                                                       </TablixCells>
@@ -1853,8 +1861,9 @@ Cstr(Fields!CustBalanceCaption.Value)
       <Width>17.97884cm</Width>
       <Page>
         <PageHeader>
-          <Height>11.67458cm</Height>
+          <Height>11.62935cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Textbox Name="LastStatmntNo_CustCaption11">
               <KeepTogether>true</KeepTogether>
@@ -2605,7 +2614,6 @@ Cstr(Fields!CustBalanceCaption.Value)
               <Style>None</Style>
             </Border>
             <BottomBorder>
-              <Color>Black</Color>
               <Style>Solid</Style>
             </BottomBorder>
           </Style>

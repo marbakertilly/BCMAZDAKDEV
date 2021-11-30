@@ -285,7 +285,23 @@ report 50102 "Statement_BT"
                             column(Currency2Code; TempCurrency2.Code)
                             {
                             }
-                            column(DocType; DocType) //MAR
+                            //MAR
+                            column(DocType; DocType)
+                            {
+                            }
+                            column(RespBank; RespCenter."Bank Name")
+                            {
+                            }
+                            column(RespIBAN; RespCenter.IBAN)
+                            {
+                            }
+                            column(RespSWIFT; RespCenter."SWIFT Code")
+                            {
+                            }
+                            column(RespREG; RespCenter."Bank Branch No.")
+                            {
+                            }
+                            column(RespKONTO; RespCenter."Bank Account No.")
                             {
                             }
 
@@ -353,6 +369,7 @@ report 50102 "Statement_BT"
                                     IsFirstPrintLine := false;
                                     ClearCompanyPicture;
                                 end;
+                                RespCenter.Get(Customer."Responsibility Center");
                             end;
 
                             trigger OnPreDataItem()
@@ -926,8 +943,10 @@ report 50102 "Statement_BT"
         StatementLbl: Label 'Statement';
         BankPaymentLbl: Label 'Payment can be made to our bank account in';
         CustAndInvoiceNoLbl: Label 'Please state customer number';
-        DocType: Integer; // MAR
-        InvoiceLbl: Label 'Invoice'; //MAR
+        // MAR
+        DocType: Integer;
+        InvoiceLbl: Label 'Invoice';
+        RespCenter: Record "Responsibility Center";
 
         [InDataSet]
         LogInteractionEnable: Boolean;

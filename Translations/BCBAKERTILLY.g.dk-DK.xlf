@@ -2535,6 +2535,132 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SalesCreditMemoBT - NamedType CustomerNoLbl</note>
         </trans-unit>
+        <trans-unit id="Report 2918619369 - Control 2740290379 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period Length</source>
+          <target>Periodelængde</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - Control PeriodLength - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2918619369 - Control 2035961037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">      
+          <source>New Page per Customer</source>
+          <target>Skift side pr. debitor</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - Control perCustomer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2918619369 - Control 336339332 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date Interval,Number of Days</source>
+          <target>Tidsinterval,Antal dage</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - Control HeadingType - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2918619369 - Control 336339332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Heading Type</source>
+          <target>Overskrift type</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - Control HeadingType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2918619369 - Control 3438973743 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date,Posting Date,Document Date</source>
+          <target>Forfaldsdato,Bogføringsdato,Bilagsdato</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - Control Agingby - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2918619369 - Control 3438973743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aging by</source>
+          <target>Aldersfordelt efter</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - Control Agingby - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2918619369 - Control 2060407144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged As Of</source>
+          <target>Aldersfordelt pr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - Control AgedAsOf - Property Caption</note>
+        </trans-unit>
+          <trans-unit id="Report 2918619369 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target>Indstillinger</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2918619369 - Control 568987109 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Details</source>
+          <target>Udskriv detaljer</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - Control PrintDetails - Property Caption</note>
+        </trans-unit>
+          <trans-unit id="Report 2918619369 - NamedType 2402552187" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged Accounts Receivable Partner</source>
+          <target>Aldersfordelt Tilgodehavender - Partner</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - NamedType AgedAccReceivableCptnLbl</note>
+        </trans-unit>
+          <trans-unit id="Report 2918619369 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged as of %1</source>
+          <target>Aldersfordelt pr. %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Report 2918619369 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged by %1</source>
+          <target>Aldersfordelt efter %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - NamedType Text007</note>
+        </trans-unit>
+          <trans-unit id="Report 2918619369 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date,Posting Date,Document Date</source>
+          <target>Forfaldsdato,Bogføringsdato,Bilagsdato</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - NamedType Text009</note>
+        </trans-unit>
+          <trans-unit id="Report 2918619369 - NamedType 1865626161" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total (LCY)</source>
+          <target>I alt (RV)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - NamedType TotalLCYCptnLbl</note>
+        </trans-unit>
+          <trans-unit id="Report 2918619369 - ReportLabel 3857790676" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Balance</source>
+          <target>Saldo</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - ReportLabel BalanceCaption</note>
+        </trans-unit>
+          <trans-unit id="Report 2918619369 - NamedType 2555393066" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged Overdue Amounts</source>
+          <target>Aldersfordelte forfaldne beløb</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - NamedType AgedOverdueAmtCptnLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2918619369 - NamedType 3284058877" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All Amounts in LCY</source>
+          <target>Alle beløb i RV</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - NamedType AllAmtinLCYCptnLbl</note>
+        </trans-unit>
+          <trans-unit id="Report 2918619369 - NamedType 1350921099" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Before</source>
+          <target>Før</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - NamedType BeforeTok</note>
+        </trans-unit>
+          <trans-unit id="Report 2918619369 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not Due</source>
+          <target>Ikke forfalden</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - NamedType Text000</note>
+        </trans-unit>
+          <trans-unit id="Report 2918619369 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total for %1</source>
+          <target>I alt pr. %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - NamedType Text005</note>
+        </trans-unit>
+          <trans-unit id="Report 2918619369 - NamedType 3193990627" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <target>Side</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts ReceivableBT - NamedType CurrReportPageNoCptnLbl</note>
+        </trans-unit>
       </group>
     </body>
   </file>

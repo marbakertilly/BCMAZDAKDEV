@@ -154,6 +154,15 @@ tableextension 50100 "Customer_textension" extends Customer
             DataClassification = ToBeClassified;
         }
     }
+
+    keys
+    {
+        key(Key21; "Management Responsible")
+        {
+
+        }
+    }
+
     var
         DefaultDimension: Record "Default Dimension";
         DimensionValue: Record "Dimension Value";

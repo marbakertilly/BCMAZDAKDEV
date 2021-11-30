@@ -478,6 +478,18 @@ report 50101 "SalesInvoiceBT_2"
             column(Sell_to_Customer_Name; "Sell-to Customer Name")
             {
             }
+            column(Language_Code; "Language Code")
+            {
+            }
+            column(CPMAddress; CompanyInfo."CPM Address")
+            {
+            }
+            column(CPMPostCode; companyinfo."CPM Post Code")
+            {
+            }
+            column(CPMCity; companyinfo."CPM City")
+            {
+            }
             dataitem(Line; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = FIELD("No.");

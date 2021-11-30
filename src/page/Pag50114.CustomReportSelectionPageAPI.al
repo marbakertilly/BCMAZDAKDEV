@@ -25,37 +25,37 @@ page 50114 "CustomReportSelectionPageAPI"
                     begin
                         case Usage2 of
                             Usage2::Quote:
-                                Usage := Usage::"S.Quote";
+                                Rec.Usage := Rec.Usage::"S.Quote";
                             Usage2::"Confirmation Order":
-                                Usage := Usage::"S.Order";
+                                Rec.Usage := Rec.Usage::"S.Order";
                             Usage2::Invoice:
-                                Usage := Usage::"S.Invoice";
+                                Rec.Usage := Rec.Usage::"S.Invoice";
                             Usage2::"Credit Memo":
-                                Usage := Usage::"S.Cr.Memo";
+                                Rec.Usage := Rec.Usage::"S.Cr.Memo";
                             Usage2::"Customer Statement":
-                                Usage := Usage::"C.Statement";
+                                Rec.Usage := Rec.Usage::"C.Statement";
                             Usage2::"Job Quote":
-                                Usage := Usage::JQ;
+                                Rec.Usage := Rec.Usage::JQ;
                             Usage2::Reminder:
-                                Usage := Usage::Reminder;
+                                Rec.Usage := Rec.Usage::Reminder;
                             Usage2::Shipment:
-                                Usage := Usage::"S.Shipment";
+                                Rec.Usage := Rec.Usage::"S.Shipment";
                         end;
                     end;
                 }
-                field(ReportID; "Report ID")
+                field(ReportID; Rec."Report ID")
                 {
                     ApplicationArea = Basic, Suite;
                     Caption = 'Report ID';
                     ToolTip = 'Specifies the ID of the report.';
                 }
-                field(ReportCaption; "Report Caption")
+                field(ReportCaption; Rec."Report Caption")
                 {
                     ApplicationArea = Basic, Suite;
                     Caption = 'Report Caption';
                     ToolTip = 'Specifies the name of the report.';
                 }
-                field("Custom Report Description"; "Custom Report Description")
+                field("Custom Report Description"; Rec."Custom Report Description")
                 {
                     ApplicationArea = Basic, Suite;
                     Caption = 'Custom Layout Description';
@@ -65,13 +65,13 @@ page 50114 "CustomReportSelectionPageAPI"
 
                     trigger OnDrillDown()
                     begin
-                        LookupCustomReportDescription;
+                        Rec.LookupCustomReportDescription;
                         CurrPage.Update(true);
                     end;
 
                     trigger OnLookup(var Text: Text): Boolean
                     begin
-                        LookupCustomReportDescription;
+                        Rec.LookupCustomReportDescription;
                         CurrPage.Update(true);
                     end;
 
@@ -79,25 +79,25 @@ page 50114 "CustomReportSelectionPageAPI"
                     var
                         CustomReportLayout: Record "Custom Report Layout";
                     begin
-                        if "Custom Report Description" = '' then begin
-                            Validate("Custom Report Layout Code", '');
-                            Modify(true);
+                        if Rec."Custom Report Description" = '' then begin
+                            Rec.Validate("Custom Report Layout Code", '');
+                            Rec.Modify(true);
                         end else begin
-                            CustomReportLayout.SetRange("Report ID", "Report ID");
-                            CustomReportLayout.SetFilter(Description, StrSubstNo('@*%1*', "Custom Report Description"));
+                            CustomReportLayout.SetRange("Report ID", Rec."Report ID");
+                            CustomReportLayout.SetFilter(Description, StrSubstNo('@*%1*', Rec."Custom Report Description"));
                             if not CustomReportLayout.FindFirst then
-                                Error(CouldNotFindCustomReportLayoutErr, "Custom Report Description");
+                                Error(CouldNotFindCustomReportLayoutErr, Rec."Custom Report Description");
 
-                            Validate("Custom Report Layout Code", CustomReportLayout.Code);
-                            Modify(true);
+                            Rec.Validate("Custom Report Layout Code", CustomReportLayout.Code);
+                            Rec.Modify(true);
                         end;
                     end;
                 }
-                field("Custom Report Layout Code"; "Custom Report Layout Code")
+                field("Custom Report Layout Code"; Rec."Custom Report Layout Code")
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field(SendToEmail; "Send To Email")
+                field(SendToEmail; Rec."Send To Email")
                 {
                     ApplicationArea = Basic, Suite;
                     Caption = 'Send To Email';
@@ -105,21 +105,21 @@ page 50114 "CustomReportSelectionPageAPI"
 
                     trigger OnAssistEdit()
                     begin
-                        ShowSelectedContacts();
+                        Rec.ShowSelectedContacts();
                     end;
                 }
-                field("Use for Email Body"; "Use for Email Body")
+                field("Use for Email Body"; Rec."Use for Email Body")
                 {
                     ApplicationArea = Basic, Suite;
                     ToolTip = 'Specifies that summarized information, such as invoice number, due date, and payment service link, will be inserted in the body of the email that you send.';
                 }
-                field("Email Body Layout Code"; "Email Body Layout Code")
+                field("Email Body Layout Code"; Rec."Email Body Layout Code")
                 {
                     ApplicationArea = Basic, Suite;
                     ToolTip = 'Specifies the ID of the email body layout that is used.';
                     Visible = false;
                 }
-                field("Email Body Layout Description"; "Email Body Layout Description")
+                field("Email Body Layout Description"; Rec."Email Body Layout Description")
                 {
                     ApplicationArea = Basic, Suite;
                     DrillDown = true;
@@ -128,13 +128,13 @@ page 50114 "CustomReportSelectionPageAPI"
 
                     trigger OnDrillDown()
                     begin
-                        LookupEmailBodyDescription;
+                        Rec.LookupEmailBodyDescription;
                         CurrPage.Update(true);
                     end;
 
                     trigger OnLookup(var Text: Text): Boolean
                     begin
-                        LookupEmailBodyDescription;
+                        Rec.LookupEmailBodyDescription;
                         CurrPage.Update(true);
                     end;
                 }
@@ -163,7 +163,7 @@ page 50114 "CustomReportSelectionPageAPI"
                 begin
                     CustomReportSelection := Rec;
                     FilterCustomerUsageReportSelections(ReportSelections);
-                    CopyFromReportSelections(ReportSelections, Database::Customer, GetFilter("Source No."));
+                    Rec.CopyFromReportSelections(ReportSelections, Database::Customer, Rec.GetFilter("Source No."));
                     CurrPage.SetRecord(CustomReportSelection);
                 end;
             }
@@ -182,7 +182,7 @@ page 50114 "CustomReportSelectionPageAPI"
                 var
                     ContBusRel: Record "Contact Business Relation";
                 begin
-                    GetSendToEmailFromContactsSelection(ContBusRel."Link to Table"::Customer.AsInteger(), GetFilter("Source No."));
+                    Rec.GetSendToEmailFromContactsSelection(ContBusRel."Link to Table"::Customer.AsInteger(), Rec.GetFilter("Source No."));
                 end;
             }
         }
@@ -191,12 +191,12 @@ page 50114 "CustomReportSelectionPageAPI"
     trigger OnAfterGetRecord()
     begin
         MapTableUsageValueToPageValue;
-        GetSendToEmail(false);
+        Rec.GetSendToEmail(false);
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        InitUsage;
+        Rec.InitUsage;
         MapTableUsageValueToPageValue;
     end;
 
@@ -208,7 +208,7 @@ page 50114 "CustomReportSelectionPageAPI"
     var
         CustomReportSelection: Record "Custom Report Selection";
     begin
-        case Usage of
+        case Rec.Usage of
             CustomReportSelection.Usage::"S.Quote":
                 Usage2 := Usage2::Quote;
             CustomReportSelection.Usage::"S.Order":

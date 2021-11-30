@@ -16,6 +16,10 @@ pageextension 50100 "CustomerListExt" extends "Customer List"
             {
                 ApplicationArea = all;
             }
+            field(Stage; Rec.Stage)
+            {
+                ApplicationArea = all;
+            }
         }
     }
 }

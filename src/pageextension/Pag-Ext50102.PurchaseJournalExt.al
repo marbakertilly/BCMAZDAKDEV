@@ -32,6 +32,8 @@ pageextension 50102 "PurchaseJournalExt" extends "Purchase Journal"
                 if Vendor.Get(DimensionSetEntry."Dimension Value Code") then begin
                     rec."Shortcut Dimension 1 Code" := Vendor."Global Dimension 1 Code";
                     rec."Shortcut Dimension 2 Code" := Vendor."Global Dimension 2 Code";
+                    Rec.ValidateShortcutDimCode(1, Vendor."Global Dimension 1 Code");
+                    rec.ValidateShortcutDimCode(2, Vendor."Global Dimension 2 Code");
                     Rec.Modify(true);
                 end;
         end;
