@@ -89,7 +89,10 @@ pageextension 50101 "CustomerCardExtension" extends "Customer Card"
                 {
                     ApplicationArea = All;
                 }
-
+                field("Type of Accounting"; Rec."Type of Accounting")
+                {
+                    ApplicationArea = All;
+                }
 
             }
         }

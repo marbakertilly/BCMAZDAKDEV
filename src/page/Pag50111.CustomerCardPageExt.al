@@ -860,6 +860,10 @@ page 50111 "CustomerCardPageExt"
                 {
                     ApplicationArea = All;
                 }
+                field("Type of Accounting"; Rec."Type of Accounting")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
         area(factboxes)

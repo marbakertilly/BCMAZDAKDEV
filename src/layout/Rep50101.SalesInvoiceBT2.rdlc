@@ -3790,22 +3790,22 @@
                 </TablixMember>
                 <TablixMember>
                   <Visibility>
-                    <Hidden>=Fields!Language_Code.Value = "ENG" Or Fields!Language_Code.Value = "ENU" Or Fields!CurrencyCode.Value = "EUR"</Hidden>
+                    <Hidden>=Fields!CurrencyCode.Value = "EUR"</Hidden>
                   </Visibility>
                 </TablixMember>
                 <TablixMember>
                   <Visibility>
-                    <Hidden>=Fields!Language_Code.Value = "DAN" Or Fields!Language_Code.Value = " " Or Fields!CurrencyCode.Value = "DKK"</Hidden>
+                    <Hidden>=Fields!CurrencyCode.Value = "DKK"</Hidden>
                   </Visibility>
                 </TablixMember>
                 <TablixMember>
                   <Visibility>
-                    <Hidden>=Fields!Language_Code.Value = "DAN" Or Fields!Language_Code.Value = " " Or Fields!CurrencyCode.Value = "DKK"</Hidden>
+                    <Hidden>=Fields!CurrencyCode.Value = "DKK"</Hidden>
                   </Visibility>
                 </TablixMember>
                 <TablixMember>
                   <Visibility>
-                    <Hidden>=Fields!Language_Code.Value = "DAN" Or Fields!Language_Code.Value = " " Or Fields!CurrencyCode.Value = "DKK"</Hidden>
+                    <Hidden>=Fields!CurrencyCode.Value = "DKK"</Hidden>
                   </Visibility>
                 </TablixMember>
                 <TablixMember />

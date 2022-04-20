@@ -153,6 +153,12 @@ tableextension 50100 "Customer_textension" extends Customer
             CaptionML = ENU = 'Primary Industry Code', DAN = 'Branchekode';
             DataClassification = ToBeClassified;
         }
+
+        field(50018; "Type of Accounting"; Code[20])
+        {
+            CaptionML = ENU = 'Type of Accounting', DAN = 'Erklæringstype';
+            DataClassification = ToBeClassified;
+        }
     }
 
     keys
