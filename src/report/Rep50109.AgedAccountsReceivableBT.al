@@ -221,6 +221,7 @@ report 50109 "Aged Accounts ReceivableBT"
                     begin
                         SetRange("Posting Date", EndingDate + 1, DMY2Date(31, 12, 9999));
                         CopyDimFiltersFromCustomer("Cust. Ledger Entry");
+
                     end;
                 }
                 dataitem(OpenCustLedgEntry; "Cust. Ledger Entry")
@@ -292,23 +293,23 @@ report 50109 "Aged Accounts ReceivableBT"
                         }
 
                         //>>PNI
-                        column(AgedPartnerCLE1RemAmtLCY; AgedCustLedgEntryPartner[1]."Remaining Amt. (LCY)")
+                        column(AgedPartnerCLE1RemAmtLCY; AgedCustLedgEntryPartner[PartnerCount] [1]."Remaining Amt. (LCY)")
                         {
                             AutoFormatType = 1;
                         }
-                        column(AgedPartnerCLE2RemAmtLCY; AgedCustLedgEntryPartner[2]."Remaining Amt. (LCY)")
+                        column(AgedPartnerCLE2RemAmtLCY; AgedCustLedgEntryPartner[PartnerCount] [2]."Remaining Amt. (LCY)")
                         {
                             AutoFormatType = 1;
                         }
-                        column(AgedPartnerCLE3RemAmtLCY; AgedCustLedgEntryPartner[3]."Remaining Amt. (LCY)")
+                        column(AgedPartnerCLE3RemAmtLCY; AgedCustLedgEntryPartner[PartnerCount] [3]."Remaining Amt. (LCY)")
                         {
                             AutoFormatType = 1;
                         }
-                        column(AgedPartnerCLE4RemAmtLCY; AgedCustLedgEntryPartner[4]."Remaining Amt. (LCY)")
+                        column(AgedPartnerCLE4RemAmtLCY; AgedCustLedgEntryPartner[PartnerCount] [4]."Remaining Amt. (LCY)")
                         {
                             AutoFormatType = 1;
                         }
-                        column(AgedPartnerCLE5RemAmtLCY; AgedCustLedgEntryPartner[5]."Remaining Amt. (LCY)")
+                        column(AgedPartnerCLE5RemAmtLCY; AgedCustLedgEntryPartner[PartnerCount] [5]."Remaining Amt. (LCY)")
                         {
                             AutoFormatType = 1;
                         }
@@ -372,7 +373,7 @@ report 50109 "Aged Accounts ReceivableBT"
                             AutoFormatType = 1;
                         }
                         //PNI
-                        column(TotalPartnerCLE1AmtLCY; TotalPartnerCustLedgEntry[1]."Amount (LCY)")
+                        column(TotalPartnerCLE1AmtLCY; TotalPartnerCustLedgEntry[PartnerCount] [1]."Amount (LCY)")
                         {
                             AutoFormatType = 1;
                         }
@@ -382,7 +383,7 @@ report 50109 "Aged Accounts ReceivableBT"
                             AutoFormatType = 1;
                         }
                         //>>Pni
-                        column(TotalPartnerCLE1RemAmtLCY; TotalPartnerCustLedgEntry[1]."Remaining Amt. (LCY)")
+                        column(TotalPartnerCLE1RemAmtLCY; TotalPartnerCustLedgEntry[PartnerCount] [1]."Remaining Amt. (LCY)")
                         {
                             AutoFormatType = 1;
                         }
@@ -393,7 +394,7 @@ report 50109 "Aged Accounts ReceivableBT"
                         }
 
                         //>>Pni
-                        column(TotalPartnerCLE2RemAmtLCY; TotalPartnerCustLedgEntry[2]."Remaining Amt. (LCY)")
+                        column(TotalPartnerCLE2RemAmtLCY; TotalPartnerCustLedgEntry[PartnerCount] [2]."Remaining Amt. (LCY)")
                         {
                             AutoFormatType = 1;
                         }
@@ -404,7 +405,7 @@ report 50109 "Aged Accounts ReceivableBT"
                         }
 
                         //>>Pni
-                        column(TotalPartnerCLE3RemAmtLCY; TotalPartnerCustLedgEntry[3]."Remaining Amt. (LCY)")
+                        column(TotalPartnerCLE3RemAmtLCY; TotalPartnerCustLedgEntry[PartnerCount] [3]."Remaining Amt. (LCY)")
                         {
                             AutoFormatType = 1;
                         }
@@ -414,7 +415,7 @@ report 50109 "Aged Accounts ReceivableBT"
                             AutoFormatType = 1;
                         }
                         //>>Pni
-                        column(TotalPartnerCLE4RemAmtLCY; TotalPartnerCustLedgEntry[4]."Remaining Amt. (LCY)")
+                        column(TotalPartnerCLE4RemAmtLCY; TotalPartnerCustLedgEntry[PartnerCount] [4]."Remaining Amt. (LCY)")
                         {
                             AutoFormatType = 1;
                         }
@@ -426,7 +427,7 @@ report 50109 "Aged Accounts ReceivableBT"
                         }
 
                         //>>Pni
-                        column(TotalPartnerCLE5RemAmtLCY; TotalPartnerCustLedgEntry[5]."Remaining Amt. (LCY)")
+                        column(TotalPartnerCLE5RemAmtLCY; TotalPartnerCustLedgEntry[PartnerCount] [5]."Remaining Amt. (LCY)")
                         {
                             AutoFormatType = 1;
                         }
@@ -457,7 +458,7 @@ report 50109 "Aged Accounts ReceivableBT"
                             AutoFormatType = 1;
                         }
 
-                        column(TotalPartnerCLE1RemAmt; TotalPartnerCustLedgEntry[1]."Remaining Amount")
+                        column(TotalPartnerCLE1RemAmt; TotalPartnerCustLedgEntry[PartnerCount] [1]."Remaining Amount")
                         {
                             AutoFormatType = 1;
 
@@ -468,10 +469,12 @@ report 50109 "Aged Accounts ReceivableBT"
                             AutoFormatType = 1;
                         }
                         //>>PNI
-                        column(TotalPartnerCLE1Amt; TotalPartnerCustLedgEntry[1].Amount)
+                        column(TotalPartnerCLE1Amt; TotalPartnerCustLedgEntry[PartnerCount] [1].Amount)
                         {
                             AutoFormatType = 1;
                         }
+
+
                         //<<PNI
                         column(TotalCheck; CustFilterCheck)
                         {
@@ -565,31 +568,37 @@ report 50109 "Aged Accounts ReceivableBT"
                             AgedCustLedgEntry[PeriodIndex]."Remaining Amount" := CustLedgEntryEndingDate."Remaining Amount";
                             AgedCustLedgEntry[PeriodIndex]."Remaining Amt. (LCY)" := CustLedgEntryEndingDate."Remaining Amt. (LCY)";
                             //>>PNI
-                            AgedCustLedgEntryPartner[PeriodIndex]."Remaining Amount" += CustLedgEntryEndingDate."Remaining Amount";
-                            AgedCustLedgEntryPartner[PeriodIndex]."Remaining Amt. (LCY)" += CustLedgEntryEndingDate."Remaining Amt. (LCY)";
+                            AgedCustLedgEntryPartner[PartnerCount] [PeriodIndex]."Remaining Amount" += CustLedgEntryEndingDate."Remaining Amount";
+                            AgedCustLedgEntryPartner[PartnerCount] [PeriodIndex]."Remaining Amt. (LCY)" += CustLedgEntryEndingDate."Remaining Amt. (LCY)";
 
                             //<<PNI 20211108
                             TotalCustLedgEntry[PeriodIndex]."Remaining Amount" += CustLedgEntryEndingDate."Remaining Amount";
                             TotalCustLedgEntry[PeriodIndex]."Remaining Amt. (LCY)" += CustLedgEntryEndingDate."Remaining Amt. (LCY)";
                             //>>PNI
-                            TotalPartnerCustLedgEntry[PeriodIndex]."Remaining Amount" += CustLedgEntryEndingDate."Remaining Amount";
-                            TotalPartnerCustLedgEntry[PeriodIndex]."Remaining Amt. (LCY)" += CustLedgEntryEndingDate."Remaining Amt. (LCY)";                           //<<PNI
+                            TotalPartnerCustLedgEntry[PartnerCount] [PeriodIndex]."Remaining Amount" += CustLedgEntryEndingDate."Remaining Amount";
+                            TotalPartnerCustLedgEntry[PartnerCount] [PeriodIndex]."Remaining Amt. (LCY)" += CustLedgEntryEndingDate."Remaining Amt. (LCY)";                           //<<PNI
                             //<<PNI
                             GrandTotalCustLedgEntry[PeriodIndex]."Remaining Amt. (LCY)" += CustLedgEntryEndingDate."Remaining Amt. (LCY)";
                             TotalCustLedgEntry[1].Amount += CustLedgEntryEndingDate."Remaining Amount";
                             TotalCustLedgEntry[1]."Amount (LCY)" += CustLedgEntryEndingDate."Remaining Amt. (LCY)";
                             //>>PNI
-                            TotalPartnerCustLedgEntry[1].Amount += CustLedgEntryEndingDate."Remaining Amount";
-                            TotalPartnerCustLedgEntry[1]."Amount (LCY)" += CustLedgEntryEndingDate."Remaining Amt. (LCY)";
+                            TotalPartnerCustLedgEntry[PartnerCount] [1].Amount += CustLedgEntryEndingDate."Remaining Amount";
+                            TotalPartnerCustLedgEntry[PartnerCount] [1]."Amount (LCY)" += CustLedgEntryEndingDate."Remaining Amt. (LCY)";
                             //<<PNI
                             GrandTotalCustLedgEntry[1]."Amount (LCY)" += CustLedgEntryEndingDate."Remaining Amt. (LCY)";
                         end;
 
                         trigger OnPostDataItem()
+                        var
+                            Cust2: record Customer;
+                            i: Integer;
                         begin
                             if not PrintAmountInLCY then
                                 UpdateCurrencyTotals;
-                        end;
+
+                        ENd;
+                        //<<Pni
+
 
                         trigger OnPreDataItem()
                         begin
@@ -607,15 +616,15 @@ report 50109 "Aged Accounts ReceivableBT"
                     }
 
                     trigger OnAfterGetRecord()
+
                     begin
+
+
+
+
+
+
                         Clear(TotalCustLedgEntry);
-                        //>>Pni 20211108
-                        /*
-                        if PartnerID <> Customer."Management Responsible" then
-                            // Clear(TotalPartnerCustLedgEntry);
-                            PartnerID := Customer."Management Responsible";
-                        */
-                        //<<Pni
 
                         if Number = 1 then begin
                             if not TempCurrency.FindSet(false, false) then
@@ -630,6 +639,7 @@ report 50109 "Aged Accounts ReceivableBT"
                             CurrencyCode := GLSetup."LCY Code";
 
                         NumberOfCurrencies := NumberOfCurrencies + 1;
+
                     end;
 
                     trigger OnPreDataItem()
@@ -638,7 +648,16 @@ report 50109 "Aged Accounts ReceivableBT"
                     end;
                 }
 
+
+
                 trigger OnAfterGetRecord()
+                var
+                    i: Integer;
+                    Cust2: record Customer;
+                    x: Integer;
+                    Cust3: record Customer;
+
+
                 begin
                     if NewPagePercustomer then
                         PageGroupNo += 1;
@@ -646,14 +665,28 @@ report 50109 "Aged Accounts ReceivableBT"
                     TempCurrency.DeleteAll();
                     TempCustLedgEntry.Reset();
                     TempCustLedgEntry.DeleteAll();
+
                     //>>Pni 20211108
+                    clear(Cust2);
+                    Cust2.Copy(Customer);
+                    i := Cust2.Next(1);
+                    Cust3.Copy(Customer);
+                    x := Cust3.Next(-1);
+                    if (Not NotFirstCust) then begin
+                        PartnerCount := 1;
+                        PartnerTotalID[PartnerCount] := Customer."Management Responsible";
+                        NotFirstCust := true;
+                    end;
 
-                    if PartnerID <> Customer."Management Responsible" then
-                        Clear(TotalPartnerCustLedgEntry);
-                    PartnerID := Customer."Management Responsible";
+                    if ((Customer."Management Responsible" <> PartnerTotalID[PartnerCount]) And (NotFirstCust = true)) then begin
+                        PartnerCount += 1;
+                        PartnerTotalID[PartnerCount] := Customer."Management Responsible";
+                    End;
 
-                    //<<Pni
                 end;
+
+
+
             }
             dataitem(CurrencyTotals; "Integer")
             {
@@ -721,6 +754,57 @@ report 50109 "Aged Accounts ReceivableBT"
                         until TempCurrencyAmount.Next() = 0;
                 end;
             }
+            dataitem(PartnerTotals; "Integer")
+            {
+                DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 .. 10));
+
+                column(PartnerTotalID; PartnerTotalID[Number])
+                {
+
+                }
+                column(PartnerTotalName; PartnerTotalName[Number])
+                {
+
+                }
+                column(TotalOnlyPartnerBalanceAmt; TotalPartnerCustLedgEntry[Number] [1].Amount)
+                {
+                    AutoFormatType = 1;
+                }
+                column(TotalOnlyPartnerCLE1Amt; TotalPartnerCustLedgEntry[Number] [1]."Remaining Amount")
+                {
+                    AutoFormatType = 1;
+                }
+                column(TotalOnlyPartnerCLE2Amt; TotalPartnerCustLedgEntry[Number] [2]."Remaining Amount")
+                {
+                    AutoFormatType = 1;
+                }
+
+                column(TotalOnlyPartnerCLE3Amt; TotalPartnerCustLedgEntry[Number] [3]."Remaining Amount")
+                {
+                    AutoFormatType = 1;
+                }
+                column(TotalOnlyPartnerCLE4Amt; TotalPartnerCustLedgEntry[Number] [4]."Remaining Amount")
+                {
+                    AutoFormatType = 1;
+                }
+
+                column(TotalOnlyPartnerCLE5Amt; TotalPartnerCustLedgEntry[Number] [5]."Remaining Amount")
+                {
+                    AutoFormatType = 1;
+                }
+
+                trigger OnAfterGetRecord()
+                var
+                    EmloyeeRec: Record Employee;
+                begin
+                    if Number > PartnerCount then
+                        CurrReport.Break();
+                    if EmloyeeRec.Get(PartnerTotalID[Number]) then
+                        PartnerTotalName[Number] := EmloyeeRec.FullName();
+                end;
+
+
+            }
         }
     }
 
@@ -770,6 +854,7 @@ report 50109 "Aged Accounts ReceivableBT"
                         Caption = 'Print Details';
                         ToolTip = 'Specifies if you want the report to show the detailed entries that add up the total balance for each customer.';
                     }
+
                     field(HeadingType; HeadingType)
                     {
                         ApplicationArea = Basic, Suite;
@@ -834,12 +919,17 @@ report 50109 "Aged Accounts ReceivableBT"
         TotalCustLedgEntry: array[5] of Record "Cust. Ledger Entry";
 
         //Pni
-        TotalPartnerCustLedgEntry: array[5] of Record "Cust. Ledger Entry";
+        TotalPartnerCustLedgEntry: array[30, 5] of Record "Cust. Ledger Entry";
+
         GrandTotalCustLedgEntry: array[5] of Record "Cust. Ledger Entry";
         AgedCustLedgEntry: array[6] of Record "Cust. Ledger Entry";
         TempCurrency: Record Currency temporary;
         //>>PNI
-        AgedCustLedgEntryPartner: array[6] of Record "Cust. Ledger Entry";
+        AgedCustLedgEntryPartner: array[30, 6] of Record "Cust. Ledger Entry";
+
+
+
+
         //<<PNI
         TempCurrency2: Record Currency temporary;
         TempCurrencyAmount: Record "Currency Amount" temporary;
@@ -885,7 +975,14 @@ report 50109 "Aged Accounts ReceivableBT"
         EnterDateFormulaErr: Label 'Enter a date formula in the Period Length field.';
         CompanyDisplayName: Text;
         //PNI
+
+        PrintOnlyPartnerTotals: Boolean;
         PartnerID: Code[10];
+        PartnerTotalID: array[50] of Code[10];
+
+        PartnerTotalName: array[50] of Text;
+        PartnerCount: Integer;
+        NotFirstCust: Boolean;
 
     local procedure CalcDates()
     var
