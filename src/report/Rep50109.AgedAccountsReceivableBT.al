@@ -756,7 +756,7 @@ report 50109 "Aged Accounts ReceivableBT"
             }
             dataitem(PartnerTotals; "Integer")
             {
-                DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 .. 10));
+                DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 .. 50));
 
                 column(PartnerTotalID; PartnerTotalID[Number])
                 {
